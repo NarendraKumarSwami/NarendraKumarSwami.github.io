@@ -250,7 +250,7 @@ border-radius: 2%;
 }
 #tech-stack>div{
        width: 15%;
-       border: 1px solid rgb(71, 161, 235);
+       
        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
        margin-top: 2%;
        margin-bottom: 2%;
@@ -277,7 +277,33 @@ border-radius: 2%;
       justify-content: space-around;
       align-items: stretch;
       align-content: stretch;
+      margin: auto;
+      margin-bottom: 30px;
+     
 }
+
+#projects>div{
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      margin: 2% 0;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      border-radius: 5px;
+    }
+
+#projects>div img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+#projects>div h3, #projects>div p{
+      text-align: center;
+      padding: 10px 0;
+}
+#projects>div p{
+    padding: 0px 0px 10px 0;
+}
+
 
 #contact{
       display: flex;
@@ -327,7 +353,7 @@ border-radius: 2%;
 }
 
 /* medium screens */
-@media all and (min-width:768px) and (max-width:1024px) {
+@media all and (min-width:570px) and (max-width:720px) {
    
       #resume{
            width: 95%;
@@ -353,12 +379,63 @@ border-radius: 2%;
            width: 30%;
            
     }
+
+    #tech-stack>div{
+          width: 23%;
+          
+    }
+    #projects{
+         flex-direction: column;
+    }
+    #projects>div{
+        width: auto;
+    }
+
+    #contact{
+          flex-direction: column;
+    }
     
 }
 
 /* mobile */
-@media all and (min-width:570px) and (max-width:720px) {
-   
+@media all and (min-width:300px) and (max-width:570px) {
+    #resume{
+        width: 97%;
+        flex-direction: column;
+     }
+ #resume>div{
+       width: auto;
+       margin: auto;
+       margin-top: 5px;
+ } 
+ .container{
+       width: 97%;
+ } 
+ #about{
+    flex-direction: column;
+    
+ }
+ #skills{
+      flex-direction: row;
+ } 
+ #skills>div{
+    width: 35%;
+ }
+ #tech-stack>div{
+     width: 35%;
+ }
+ #projects{
+    flex-direction: column;
+ }
+ #projects>div{
+      width: auto;
+ }
+ #contact{
+    flex-direction: column;
+ }
+ #contact>div{
+     width: 85%;
+ }
 }
 
 
