@@ -19,9 +19,8 @@
 
 
 
-// window event listener and
     
-
+// navbar modification acording to size of window
 document.querySelector("#mobile-navbar").style.display = 'none';
 
 function   moileNavbar(){
@@ -34,7 +33,9 @@ function   moileNavbar(){
       document.querySelector("#mobile-navbar").style.display = 'block';
 }
 }
+
 moileNavbar();
+
 window.addEventListener("resize", function(){
           moileNavbar();
 });
@@ -53,36 +54,62 @@ window.addEventListener("resize", function(){
   document.querySelector("#scrolltoTop").addEventListener("click", scrolltoTop);
 
 
+
+// scroll to particular section  for desktop
+let section = document.querySelector("#desktop-menu").children;
+for(let i=0; i<section.length; i++){
+     section[i].addEventListener("click", function(){
+         scrollToContainer(i); 
+     });
+}
+
+// scroll to particular section  for mobile
+let mSection = document.querySelector("#menu").children;
+for(let i=0; i<mSection.length; i++){
+     mSection[i].addEventListener("click", function(){
+         scrollToContainer(i);
+         toggleMenu();
+        
+     });
+}
+
+function scrollToContainer(element){
+        document.querySelectorAll(".container")[element-1].scrollIntoView(true);
+}
+
 // hide the menu at initial 
 document.querySelector("#menu").style.display = 'none';
 // toggling sliding manu in mobile view
 document.querySelector("#menu-bars").addEventListener("click", function(){
-           if(document.querySelector("#menu").style.display == 'flex'){
-                document.querySelector("#menu").style.display = 'none';
-                document.querySelector("#menu-bars").children[0].setAttribute("class", "fa fa-bars");
-                document.querySelector("#mobile-navbar").style.backgroundColor = "transparent";
-           }else{
-            document.querySelector("#menu").style.display = 'flex';
-            document.querySelector("#menu-bars").children[0].setAttribute("class", "fa fa-close");
-            
-            document.querySelector("#mobile-navbar").style.background = "#398dc1a0";
-           }
-            
+            toggleMenu();
 })
 
+function toggleMenu(){
+   if(document.querySelector("#menu").style.display == 'flex'){
+      document.querySelector("#menu").style.display = 'none';
+      document.querySelector("#menu-bars").children[0].setAttribute("class", "fa fa-bars");
+      document.querySelector("#mobile-navbar").style.backgroundColor = "transparent";
+ }else{
+  document.querySelector("#menu").style.display = 'flex';
+  document.querySelector("#menu-bars").children[0].setAttribute("class", "fa fa-close");
+  
+  document.querySelector("#mobile-navbar").style.background = "#398dc1a0";
+ }
+}
 
 
 
 
 
-// scroll to vieew a praticular elements
+
+// scroll to vieew a praticular elements in y direction
 let x =0;
-setTimeout(function(){
-      let children =   document.querySelector("#slides").children;
-      if(x == 6){
-         x = 0;
-      }
-      children[x].scrollIntoView();
-      x++;
+setInterval(function(){
+      let children =   document.querySelectorAll(".container");
+      //  console.log(children);
+     
 
 }, 1000)
+
+
+

@@ -57,6 +57,15 @@ color:  var(--txt-color);
 text-decoration: none;
 }
 
+#navbar a:hover{
+      font-weight: bold;
+      text-decoration: underline;
+}
+
+#menu a{
+      padding: 10px 0px;
+}
+
 
 
 #desktop-navbar{
