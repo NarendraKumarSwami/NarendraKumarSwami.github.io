@@ -324,6 +324,15 @@ border-radius: 2%;
 }
 #contact>div{
       width: 45%;
+    
+}
+#contact>div:first-child>div{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px;
+}
+#contact>div:first-child>div h3{
+    padding-right: 10px;
 }
 
 #contact> div img{
