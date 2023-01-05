@@ -312,6 +312,15 @@ border-radius: 2%;
 #projects>div p{
     padding: 0px 0px 10px 0;
 }
+#projects>div>div {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+#projects a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 
 #contact{
